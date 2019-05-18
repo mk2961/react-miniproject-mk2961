@@ -21,12 +21,7 @@ const Add = props => {
         let priceCheck = parseFloat(currentPrice.value);
         if(!isNaN(priceCheck)){
           console.log(priceCheck);
-          // props.dispatch(
-          //   {
-          //     type:"ADD", 
-          //     title:currentTitle.value, 
-          //     price: priceCheck
-          //   })
+          
           props.dispatch(
             addItem(currentTitle.value,priceCheck)
           );
