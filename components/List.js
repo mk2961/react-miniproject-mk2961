@@ -11,7 +11,7 @@ const List = props => (
   <div>
   list
   <ul>
-    {props.secrets.map(s => <li key={s._id}>{s.title}</li>)}
+    {props.secrets.map(s => <li key={s._id}>{s.name}</li>)}
   </ul>
   </div>
 )

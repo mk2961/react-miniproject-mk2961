@@ -4,32 +4,19 @@ import { addItem } from '../actions/actions';
 
 const Add = props => {
 
-  let currentTitle;
-  let currentPrice;
+  let currentName;
 
   return (
     <div>
       add
       <br />
-      <input placeholder="title" ref={t => currentTitle=t} />
-      <br />
-      <input placeholder="price" ref={p => currentPrice=p}/>
-      <br />
+      <input placeholder="name" ref={t => currentName=t} />
+      
       <button onClick={() => {
-        console.log(currentTitle.value);
-        console.log(currentPrice.value);
-        let priceCheck = parseFloat(currentPrice.value);
-        if(!isNaN(priceCheck)){
-          console.log(priceCheck);
-          
-          props.dispatch(
-            addItem(currentTitle.value,priceCheck)
-          );
-          currentTitle.value ='';
-          currentPrice.value = '';
-        } else {
-          console.log('price is invalid');
-        }
+        console.log(currentName.value);
+        
+          currentName.value ='';
+       
       }}>add</button>
     </div>
   )

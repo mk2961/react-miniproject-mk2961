@@ -3,7 +3,7 @@ export const GET_SECRETS = "GET_SECRETS";
 
 import axios from 'axios';
 
-const URL = "https://whisperserver.herokuapp.com/api/secrets";
+const URL = "https://ammon-fakey.herokuapp.com/pets";
 
 export const fetchSecrets = () => {
   return dispatch => {
@@ -23,10 +23,10 @@ export const fetchSecretsSuccess = secrets => (
   }
 )
 
-export const addItem = (title,price) => {
+export const addItem = (name) => {
   return dispatch => {
     return axios
-    .post(URL, {title,price})
+    .post(URL, {name})
     .then(response => {
       dispatch(addItemSuccess(response.data))
     })
@@ -34,9 +34,9 @@ export const addItem = (title,price) => {
   }
 }
 
-export const addItemSuccess = (item) => (
+export const addItemSuccess = (name) => (
   {
     type: ADD,
-    item: item
+    item: name
   }
 )
